@@ -18,12 +18,25 @@ describe('Thermostat', function() {
 
   it('can increase the temperature', function(){
     thermostat.increaseTempBy();
-    expect(thermostat.newTemperature()).toEqual(25);
+    expect(thermostat.newTemperature()).toEqual(21);
   });
 
   it('can decrease the temperature', function(){
     thermostat.decreaseTempBy();
-    expect(thermostat.newTemperature()).toEqual(15);
+    expect(thermostat.newTemperature()).toEqual(19);
   });
+
+  it('has a min temperature', function(){
+    thermostat.minimumTemp();
+    expect(thermostat.newTemperature()).toEqual(10);
+  });
+
+  it('Minimum temperature is 10 degress', function() {
+        var i;
+        for (i=0; i<10; i++) {
+          thermostat.decreaseTempBy();
+        }
+        expect(function() {thermostat.decreaseTempBy() }).toThrowError('Minimum temperature is 10');
+      });
 
 });

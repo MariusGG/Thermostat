@@ -9,9 +9,12 @@ Thermostat.prototype.newTemperature = function() {
 };
 
 Thermostat.prototype.increaseTempBy = function(){
-  this.temperature += 5;
+  this.temperature += 1;
 };
 
 Thermostat.prototype.decreaseTempBy = function(){
-  this.temperature -= 5
+  this.temperature -= 1
+};
+Thermostat.prototype.minimumTemp = function(){
+  this.temperature == 10;
 };
